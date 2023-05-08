@@ -1,0 +1,86 @@
+/* Define CSS variables for reusability */
+:root {
+    --color-primary: #333;
+    --color-secondary: #ddd;
+    --color-warning: #ff9800;
+    --transition: all 0.3s ease-in-out;
+    --breakpoint-medium: 768px;
+  }
+  
+  /* Global styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  /* Navbar styles */
+  nav {
+    background: transparent;
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+  }
+  
+  /* changing navbar while scrolling */
+  .window-scroll {
+    background: var(--color-primary);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav_container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav button {
+    display: none;
+  }
+  
+  .nav_menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .nav_menu a {
+    font-size: 0.9rem;
+    transition: var(--transition);
+    color: var(--color-secondary);
+  }
+  
+  .nav_menu a:hover {
+    color: var(--color-warning);
+  }
+  
+  @media (min-width: var(--breakpoint-medium)) {
+    nav button {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    .nav_menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 4rem;
+    }
+    .nav_menu a {
+      color: var(--color-secondary);
+    }
+    .nav_menu a:hover {
+      color: var(--color-warning);
+    }
+  }
+  
